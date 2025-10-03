@@ -31,6 +31,7 @@ let face; // detected face
 let firstFace = true;
 let value=255;
 
+
 function preload()
 {
 	dance = loadImage("dance-happy.gif");
@@ -44,6 +45,13 @@ function setup() {
 
   // load the BlazeFace model
   loadFaceModel();
+}
+
+// keep this outside of setup/draw, just like scalePoint() and getFace()
+function createPhoneCanvas() {
+  let phoneW = 360; // width of phone screen
+  let phoneH = 640; // height of phone screen
+  createCanvas(phoneW, phoneH);
 }
 
 
