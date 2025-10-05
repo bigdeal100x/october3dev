@@ -128,6 +128,10 @@ function adjustGifSize(zone) {
 }
 
 // Handle resizing
-function windowResized() {
-  resizeCanvas(640/2, 460/2);
+function windowResizing() {
+    if (windowWidth < 640) {
+        resizeCanvas(640/2, 460/2);
+    } else {
+        resizeCanvas(640, 460);
+    }
 }
