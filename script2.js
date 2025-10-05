@@ -129,5 +129,5 @@ function adjustGifSize(zone) {
 
 // Handle resizing
 function windowResized() {
-  resizeCanvas(360, 640);
+  resizeCanvas(640/2, 460/2);
 }
