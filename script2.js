@@ -127,7 +127,7 @@ function adjustGifSize(zone) {
   }
 }
 
-Handle resizing
+// Handle resizing
 function windowResizing() {
     if (window.innerWidth < 640) {
         resizeCanvas(640/2, 460/2);
