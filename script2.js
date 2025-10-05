@@ -21,22 +21,15 @@ function preload() {
 }
 
 function setup() {
-  if (windowWidth < 500) {
-    phoneMode = true;
-    createCanvas(320, 230);
-  } else {
-    createCanvas(640, 460);
+if (window.innerWidth < 1090) {
+    createCanvas(320, 230); // smaller canvas for small screens
   }
+    else {
+    createCanvas(640, 460);
+    } // larger canvas for big screens
 
   video = createCapture(VIDEO);
   video.hide();
-
-if (phoneMode) {
-    video.size(width, height); // match canvas size
-  } else {
-    video.size(width, height); // standard size for desktop
-  }
-
   loadFaceModel();
 }
 
@@ -138,9 +131,9 @@ function adjustGifSize(zone) {
   }
 }
 
-// Handle resizing
+// // Handle resizing
 // function windowResizing() {
-//     if (window.innerWidth < 640) {
+//     if (window.innerWidth < 1090) {
 //         resizeCanvas(320, 230);
 //     } else {
 //         resizeCanvas(640, 460);
