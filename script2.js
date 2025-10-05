@@ -22,7 +22,7 @@ function preload() {
 
 function setup() {
 if (window.innerWidth < 1090) {
-    createCanvas(320, 230); // smaller canvas for small screens
+    createCanvas(230, 320); // smaller canvas for small screens
   }
     else {
     createCanvas(640, 460);
