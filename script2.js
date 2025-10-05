@@ -21,12 +21,23 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(640, 460); // phone-size canvas
+  if (windowWidth < 500) {
+    phoneMode = true;
+    createCanvas(320, 230);
+  } else {
+    createCanvas(640, 460);
+  }
+
   video = createCapture(VIDEO);
   video.hide();
+
+if (phoneMode) {
+    video.size(width, height); // match canvas size
+  } else {
+    video.size(width, height); // standard size for desktop
+  }
+
   loadFaceModel();
-  textAlign(CENTER, CENTER);
-  textSize(24);
 }
 
 // Load the BlazeFace model asynchronously
@@ -128,10 +139,10 @@ function adjustGifSize(zone) {
 }
 
 // Handle resizing
-function windowResizing() {
-    if (window.innerWidth < 640) {
-        resizeCanvas(640/2, 460/2);
-    } else {
-        resizeCanvas(640, 460);
-    }
-}
+// function windowResizing() {
+//     if (window.innerWidth < 640) {
+//         resizeCanvas(320, 230);
+//     } else {
+//         resizeCanvas(640, 460);
+//     }
+// }
